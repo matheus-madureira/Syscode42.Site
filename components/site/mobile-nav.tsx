@@ -1,0 +1,81 @@
+"use client"
+
+import { Menu, X } from "lucide-react"
+import * as React from "react"
+
+import { buttonVariants } from "@/components/ui/button"
+import { contactHref, nav } from "@/lib/site"
+
+export function MobileNav() {
+  const [open, setOpen] = React.useState(false)
+  const buttonRef = React.useRef<HTMLButtonElement>(null)
+
+  React.useEffect(() => {
+    if (!open) {
+      return
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false)
+        buttonRef.current?.focus()
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown)
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown)
+    }
+  }, [open])
+
+  return (
+    <div className="lg:hidden">
+      <button
+        ref={buttonRef}
+        type="button"
+        aria-expanded={open}
+        aria-controls="menu-mobile"
+        aria-label={open ? "Fechar menu" : "Abrir menu"}
+        onClick={() => setOpen((value) => !value)}
+        className="inline-flex size-11 items-center justify-center rounded-sm text-ink hover:bg-navy/5"
+      >
+        {open ? (
+          <X aria-hidden="true" className="size-6" />
+        ) : (
+          <Menu aria-hidden="true" className="size-6" />
+        )}
+      </button>
+
+      <nav
+        id="menu-mobile"
+        aria-label="Principal"
+        hidden={!open}
+        className="absolute inset-x-0 top-full border-b border-navy/10 bg-ice shadow-[0_12px_24px_-12px_rgb(0_41_107/0.25)]"
+      >
+        <ul className="container-site flex flex-col py-3 font-ui text-lg">
+          {nav.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="flex min-h-12 items-center border-b border-navy/10 text-ink"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li className="pt-4 pb-2">
+            <a
+              href={contactHref}
+              onClick={() => setOpen(false)}
+              className={buttonVariants({ className: "w-full" })}
+            >
+              Agendar conversa
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  )
+}
