@@ -1,7 +1,8 @@
 import Image from "next/image"
+import Link from "next/link"
 
 import { buttonVariants } from "@/components/ui/button"
-import { contactHref } from "@/lib/site"
+import { contactHref, servicesPath } from "@/lib/site"
 import banner from "@/public/wallpaper-syscode42-blue.webp"
 
 export function Hero() {
@@ -42,12 +43,12 @@ export function Hero() {
             <a href={contactHref} className={buttonVariants({ size: "lg" })}>
               Agendar uma conversa
             </a>
-            <a
-              href="#servicos"
+            <Link
+              href={servicesPath}
               className={buttonVariants({ variant: "outline", size: "lg" })}
             >
               Ver serviços
-            </a>
+            </Link>
           </div>
         </div>
 

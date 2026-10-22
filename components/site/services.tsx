@@ -1,4 +1,8 @@
+import Link from "next/link"
+
+import { buttonVariants } from "@/components/ui/button"
 import { services } from "@/lib/content"
+import { servicesPath } from "@/lib/site"
 
 export function Services() {
   return (
@@ -51,6 +55,13 @@ export function Services() {
             </li>
           ))}
         </ul>
+
+        <Link
+          href={servicesPath}
+          className={buttonVariants({ variant: "outline", className: "mt-10" })}
+        >
+          Ver todos os serviços em detalhe
+        </Link>
       </div>
     </section>
   )

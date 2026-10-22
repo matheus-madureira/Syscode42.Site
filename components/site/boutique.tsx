@@ -1,4 +1,8 @@
+import Link from "next/link"
+
+import { buttonVariants } from "@/components/ui/button"
 import { principles } from "@/lib/content"
+import { aboutPath } from "@/lib/site"
 
 export function Boutique() {
   return (
@@ -24,6 +28,15 @@ export function Boutique() {
             das decisões, a qualidade do código e quem você encontra do outro
             lado da call.
           </p>
+          <Link
+            href={aboutPath}
+            className={buttonVariants({
+              variant: "outline-gold",
+              className: "mt-8",
+            })}
+          >
+            Conheça a Syscode42
+          </Link>
         </div>
 
         <ul className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-7">

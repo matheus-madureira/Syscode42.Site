@@ -4,7 +4,7 @@ import Link from "next/link"
 import { ConsentPreferencesButton } from "@/components/site/consent"
 import { Icon } from "@/components/ui/icon"
 import { contactHref, nav, privacyPath, site } from "@/lib/site"
-import logoBlack from "@/public/logo-syscode42-black.webp"
+import logo from "@/public/logo-syscode42-transparent.webp"
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -14,13 +14,12 @@ export function Footer() {
       <div className="container-site grid gap-12 py-16 sm:py-20 md:grid-cols-12">
         <div className="md:col-span-5">
           <Image
-            src={logoBlack}
+            src={logo}
             alt="Syscode42"
-            width={128}
-            height={128}
-            className="-ml-4 size-32"
+            sizes="128px"
+            className="h-auto w-32"
           />
-          <p className="mt-4 max-w-sm">
+          <p className="mt-6 max-w-sm">
             Boutique de software enxuta. Sistemas, APIs e produtos digitais sob
             medida, feitos por um time pequeno e sênior.
           </p>
