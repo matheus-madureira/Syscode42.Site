@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 
-import { privacyPath, site } from "@/lib/site"
+import { aboutPath, privacyPath, servicesPath, site } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,6 +9,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${site.url}${servicesPath}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${site.url}${aboutPath}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${site.url}${privacyPath}`,

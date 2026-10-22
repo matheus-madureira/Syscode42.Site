@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { buttonVariants } from "@/components/ui/button"
 import { MobileNav } from "@/components/site/mobile-nav"
+import { NavLink } from "@/components/site/nav-link"
 import { Wordmark } from "@/components/site/wordmark"
 import { contactHref, nav } from "@/lib/site"
 
@@ -21,12 +22,13 @@ export function Header() {
           <ul className="flex items-center gap-1 font-ui text-[0.95rem] text-steel">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link
+                <NavLink
                   href={item.href}
-                  className="inline-flex min-h-11 items-center rounded-sm px-3 transition-colors hover:text-navy"
+                  className="relative inline-flex min-h-11 items-center rounded-sm px-3 transition-colors hover:text-navy"
+                  activeClassName="text-navy after:absolute after:bottom-1.5 after:left-3 after:h-[3px] after:w-4 after:rounded-[1px] after:bg-gold"
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

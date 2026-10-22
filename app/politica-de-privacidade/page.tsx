@@ -1,43 +1,16 @@
-import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
+import { pageMetadata } from "@/lib/metadata"
 import { privacyPath, site } from "@/lib/site"
 
 const privacyUpdatedAt = "2026-10-22"
 
-const title = "Política de privacidade"
-const description =
-  "Como a Syscode42 trata dados pessoais no site: o que coletamos, para quê, com quem compartilhamos, cookies e como exercer seus direitos pela LGPD."
-
-const ogImage = {
-  url: "/opengraph-image",
-  width: 1200,
-  height: 630,
-  alt: `${site.name}, boutique de software sob medida`,
-}
-
-// openGraph e twitter da página substituem os do layout por inteiro
-// (inclusive a imagem gerada por app/opengraph-image): repete os campos.
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: privacyPath },
-  openGraph: {
-    type: "website",
-    locale: site.locale,
-    url: privacyPath,
-    siteName: site.name,
-    title: `${title} | ${site.name}`,
-    description,
-    images: [ogImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${title} | ${site.name}`,
-    description,
-    images: [ogImage.url],
-  },
-}
+export const metadata = pageMetadata({
+  title: "Política de privacidade",
+  description:
+    "Como a Syscode42 trata dados pessoais no site: o que coletamos, para quê, com quem compartilhamos, cookies e como exercer seus direitos pela LGPD.",
+  path: privacyPath,
+})
 
 function External({ href, children }: { href: string; children: ReactNode }) {
   return (

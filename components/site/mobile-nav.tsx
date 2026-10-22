@@ -1,8 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import * as React from "react"
 
+import { NavLink } from "@/components/site/nav-link"
 import { buttonVariants } from "@/components/ui/button"
 import { Icon } from "@/components/ui/icon"
 import { contactHref, nav } from "@/lib/site"
@@ -53,13 +53,14 @@ export function MobileNav() {
         <ul className="container-site flex flex-col py-3 font-ui text-lg">
           {nav.map((item) => (
             <li key={item.href}>
-              <Link
+              <NavLink
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center border-b border-navy/10 text-ink"
+                className="flex min-h-12 items-center gap-3 border-b border-navy/10 text-ink"
+                activeClassName="text-navy before:h-[3px] before:w-4 before:rounded-[1px] before:bg-gold"
               >
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
           <li className="pt-4 pb-2">

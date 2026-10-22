@@ -23,9 +23,12 @@ export const site = {
   areaServed: "BR",
 } as const
 
+export const servicesPath = "/servicos"
+export const aboutPath = "/sobre"
+
 export const nav = [
-  { href: "/#servicos", label: "Serviços" },
-  { href: "/#sobre", label: "Sobre nós" },
+  { href: servicesPath, label: "Serviços" },
+  { href: aboutPath, label: "Sobre nós" },
   { href: "/#processo", label: "Processo" },
   { href: "/#faq", label: "Perguntas" },
 ] as const

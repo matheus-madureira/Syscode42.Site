@@ -24,6 +24,15 @@ const buttonCva = cva(
         lg: "h-14 px-8 text-lg",
       },
     },
+    // A variante link não tem altura nem padding de botão, qualquer que seja
+    // o tamanho (o cva aplica size depois de variant).
+    compoundVariants: [
+      {
+        variant: "link",
+        size: ["default", "sm", "lg"],
+        className: "h-auto px-0",
+      },
+    ],
     defaultVariants: {
       variant: "primary",
       size: "default",

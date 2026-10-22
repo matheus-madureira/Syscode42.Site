@@ -5,11 +5,19 @@ import { cn } from "@/lib/utils"
 // Ícones Iconly V3.0 (Sharp / Light) exportados do Figma para public/icons.
 // Para adicionar um ícone: exporte o SVG para public/icons e registre aqui.
 const icons = {
+  "2-user": "/icons/2-user.svg",
   "arrow-down-2": "/icons/arrow-down-2.svg",
   category: "/icons/category.svg",
+  chat: "/icons/chat.svg",
   "close-square": "/icons/close-square.svg",
+  discovery: "/icons/discovery.svg",
+  document: "/icons/document.svg",
   message: "/icons/message.svg",
   send: "/icons/send.svg",
+  setting: "/icons/setting.svg",
+  "shield-done": "/icons/shield-done.svg",
+  swap: "/icons/swap.svg",
+  work: "/icons/work.svg",
 } as const
 
 export type IconName = keyof typeof icons
