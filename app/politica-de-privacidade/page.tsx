@@ -68,10 +68,11 @@ const sections: { id: string; title: string; body: ReactNode }[] = [
     title: "Quem somos",
     body: (
       <p>
-        A {site.name} é uma boutique de desenvolvimento de software. Nesta
-        política, “nós” se refere à {site.name}, controladora dos dados pessoais
-        tratados em {site.url.replace("https://", "")}. Dúvidas sobre
-        privacidade podem ser enviadas para {email}.
+        A {site.name} ({site.legalName}, CNPJ {site.cnpj}) é uma boutique de
+        desenvolvimento de software. Nesta política, “nós” se refere à{" "}
+        {site.name}, controladora dos dados pessoais tratados em{" "}
+        {site.url.replace("https://", "")}. Dúvidas sobre privacidade podem ser
+        enviadas para {email}.
       </p>
     ),
   },

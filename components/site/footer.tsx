@@ -70,7 +70,9 @@ export function Footer() {
         <div className="container-site flex flex-col gap-2 py-4 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6">
             <p className="py-2">
-              © {year} {site.legalName}. Todos os direitos reservados.
+              © {year} {site.name}. Todos os direitos reservados.
+              <br />
+              {site.legalName}, CNPJ {site.cnpj}
             </p>
             <Link
               href={privacyPath}

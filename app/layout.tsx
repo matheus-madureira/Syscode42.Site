@@ -88,6 +88,8 @@ const organizationJsonLd = {
       "@id": `${site.url}/#organization`,
       name: site.name,
       legalName: site.legalName,
+      taxID: site.cnpj,
+      foundingDate: site.foundingDate,
       url: site.url,
       logo: `${site.url}/logo-syscode-white.webp`,
       email: site.email,

@@ -31,7 +31,7 @@ Até aqui, todo o conteúdo ficava em `/` e a navegação usava âncoras relativ
 ## Fora do escopo
 
 - Termos de uso.
-- Dados cadastrais da empresa (razão social e CNPJ): entram quando forem fornecidos, em `lib/site.ts`.
+- ~~Dados cadastrais da empresa~~: incluídos em `lib/site.ts` (razão social e CNPJ) na seção "Quem somos", no rodapé e no JSON-LD.
 
 ## Tarefas
 

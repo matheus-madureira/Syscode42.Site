@@ -1,7 +1,9 @@
 // TODO: confirmar se o domínio canônico é com ou sem "www" antes de publicar.
 export const site = {
   name: "Syscode42",
-  legalName: "Syscode42",
+  legalName: "SYSCODE42 SERVICOS DE INFORMATICA LTDA - ME",
+  cnpj: "58.228.425/0001-32",
+  foundingDate: "2024-11-26",
   url: "https://www.syscode42.com.br",
   email: "contato@syscode42.com.br",
   locale: "pt_BR",
