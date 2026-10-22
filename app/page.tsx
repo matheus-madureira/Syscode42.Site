@@ -2,6 +2,7 @@ import { Boutique } from "@/components/site/boutique"
 import { Contact } from "@/components/site/contact"
 import { Faq } from "@/components/site/faq"
 import { Hero } from "@/components/site/hero"
+import { ToolsSection } from "@/components/site/home/tools-section"
 import { Process } from "@/components/site/process"
 import { Services } from "@/components/site/services"
 import { faq } from "@/lib/content"
@@ -22,6 +23,7 @@ export default function Page() {
     <>
       <JsonLd data={faqJsonLd} />
       <Hero />
+      <ToolsSection />
       <Services />
       <Boutique />
       <Process />

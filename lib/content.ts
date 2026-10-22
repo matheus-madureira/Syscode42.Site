@@ -117,18 +117,22 @@ export const principles = [
 export const steps = [
   {
     title: "Diagnóstico",
+    icon: "discovery",
     body: "Uma conversa para entender o problema, o contexto do negócio e o que já existe. Sem custo.",
   },
   {
     title: "Proposta",
+    icon: "document",
     body: "Escopo, arquitetura, prazo e investimento por escrito, com as decisões técnicas explicadas.",
   },
   {
     title: "Construção em ciclos",
+    icon: "activity",
     body: "Entregas a cada uma ou duas semanas, em um ambiente que você acessa e testa desde o início.",
   },
   {
     title: "Entrega e evolução",
+    icon: "shield-done",
     body: "Publicação em produção, documentação e passagem de conhecimento. Se fizer sentido, seguimos juntos na evolução.",
   },
 ] as const

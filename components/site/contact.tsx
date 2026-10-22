@@ -1,7 +1,13 @@
+import Image from "next/image"
+
+import { ContactTrigger } from "@/components/site/contact-dialog"
 import { buttonVariants } from "@/components/ui/button"
 import { Icon } from "@/components/ui/icon"
-import { contactHref, site } from "@/lib/site"
+import { images } from "@/lib/images"
+import { site } from "@/lib/site"
 
+// Fecho de todas as páginas (spec 006 §7.1, item 7): uma linha da prancha com
+// a peça de ação dourada no centro, ladeada por imagem e campo navy.
 export function Contact() {
   return (
     <section
@@ -10,38 +16,52 @@ export function Contact() {
       className="py-20 sm:py-28"
     >
       <div className="container-site">
-        <div className="relative isolate overflow-hidden rounded-md border border-navy/15 bg-white px-6 py-14 sm:px-12 sm:py-20">
-          <div
-            aria-hidden="true"
-            className="hero-beam absolute top-1/2 -right-1/3 -z-10 h-24 w-[90%] rotate-[-28deg] opacity-70"
-          />
-          <div className="max-w-2xl">
+        <div className="board">
+          <div className="tile relative col-span-1 min-h-40 bg-navy p-0 md:col-span-6 md:min-h-56 lg:col-span-3 lg:min-h-[22rem]">
+            <Image
+              src={images.beamNavy.src}
+              alt=""
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+
+          <div className="tile bg-grad-gold reveal col-span-2 row-start-1 flex flex-col justify-center gap-6 p-8 text-ink sm:p-10 md:col-span-12 md:row-start-1 md:p-12 lg:col-span-6 lg:row-start-auto">
             <h2
               id="contato-title"
-              className="heading-display text-[clamp(1.75rem,1.2rem+2.2vw,2.75rem)] leading-tight"
+              className="font-display text-[clamp(1.75rem,1.2rem+2vw,2.75rem)] leading-tight font-semibold text-balance"
             >
-              Tem um sistema para tirar do papel?
+              Seu sistema, fora do papel
             </h2>
-            <p className="mt-5 text-steel">
+            <p className="max-w-[46ch] text-lg text-ink/80">
               Conte em poucas linhas o que você precisa. Respondemos em até um
               dia útil para marcar o diagnóstico, sem custo.
             </p>
-            <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
-              <a href={contactHref} className={buttonVariants({ size: "lg" })}>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <ContactTrigger
+                className={buttonVariants({
+                  size: "lg",
+                  className: "bg-ink hover:bg-navy-deep",
+                })}
+              >
                 <Icon name="send" className="size-5" />
-                Agendar uma conversa
-              </a>
+                Montar meu diagnóstico
+              </ContactTrigger>
               <a
                 href={`mailto:${site.email}`}
-                className={buttonVariants({
-                  variant: "link",
-                  className: "self-start text-lg sm:self-auto",
-                })}
+                className="inline-flex min-h-11 items-center gap-2 font-ui text-base font-medium text-ink underline decoration-ink/30 decoration-2 underline-offset-6 hover:decoration-ink"
               >
                 <Icon name="message" className="size-5" />
                 {site.email}
               </a>
             </div>
+          </div>
+
+          <div className="tile bg-grad-navy col-span-1 flex min-h-40 flex-col justify-end text-white md:col-span-6 md:min-h-56 lg:col-span-3 lg:min-h-[22rem]">
+            <p className="font-ui text-lg leading-snug font-medium text-balance">
+              Do diagnóstico à entrega, as mesmas pessoas.
+            </p>
           </div>
         </div>
       </div>

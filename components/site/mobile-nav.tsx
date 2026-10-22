@@ -2,10 +2,11 @@
 
 import * as React from "react"
 
+import { ContactTrigger } from "@/components/site/contact-dialog"
 import { NavLink } from "@/components/site/nav-link"
 import { buttonVariants } from "@/components/ui/button"
 import { Icon } from "@/components/ui/icon"
-import { contactHref, nav } from "@/lib/site"
+import { nav } from "@/lib/site"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
@@ -64,13 +65,12 @@ export function MobileNav() {
             </li>
           ))}
           <li className="pt-4 pb-2">
-            <a
-              href={contactHref}
+            <ContactTrigger
               onClick={() => setOpen(false)}
               className={buttonVariants({ className: "w-full" })}
             >
               Agendar conversa
-            </a>
+            </ContactTrigger>
           </li>
         </ul>
       </nav>

@@ -1,10 +1,11 @@
 import Link from "next/link"
 
+import { ContactTrigger } from "@/components/site/contact-dialog"
 import { buttonVariants } from "@/components/ui/button"
 import { MobileNav } from "@/components/site/mobile-nav"
 import { NavLink } from "@/components/site/nav-link"
 import { Wordmark } from "@/components/site/wordmark"
-import { contactHref, nav } from "@/lib/site"
+import { nav } from "@/lib/site"
 
 export function Header() {
   return (
@@ -35,15 +36,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={contactHref}
+          <ContactTrigger
             className={buttonVariants({
               size: "sm",
               className: "hidden sm:inline-flex",
             })}
           >
             Agendar conversa
-          </a>
+          </ContactTrigger>
           <MobileNav />
         </div>
       </div>

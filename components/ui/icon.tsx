@@ -6,17 +6,24 @@ import { cn } from "@/lib/utils"
 // Para adicionar um ícone: exporte o SVG para public/icons e registre aqui.
 const icons = {
   "2-user": "/icons/2-user.svg",
+  "3-user": "/icons/3-user.svg",
+  activity: "/icons/activity.svg",
   "arrow-down-2": "/icons/arrow-down-2.svg",
+  "arrow-right": "/icons/arrow-right.svg",
   category: "/icons/category.svg",
   chat: "/icons/chat.svg",
   "close-square": "/icons/close-square.svg",
   discovery: "/icons/discovery.svg",
   document: "/icons/document.svg",
+  graph: "/icons/graph.svg",
   message: "/icons/message.svg",
+  profile: "/icons/profile.svg",
   send: "/icons/send.svg",
   setting: "/icons/setting.svg",
   "shield-done": "/icons/shield-done.svg",
+  star: "/icons/star.svg",
   swap: "/icons/swap.svg",
+  "time-circle": "/icons/time-circle.svg",
   work: "/icons/work.svg",
 } as const
 

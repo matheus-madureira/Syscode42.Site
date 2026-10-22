@@ -1,75 +1,131 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { ContactTrigger } from "@/components/site/contact-dialog"
+import { SpecCallouts, type Callout } from "@/components/site/spec-callouts"
+import { Tile } from "@/components/ui/tile"
 import { buttonVariants } from "@/components/ui/button"
-import { contactHref, servicesPath } from "@/lib/site"
-import banner from "@/public/wallpaper-syscode42-blue.webp"
+import { Icon } from "@/components/ui/icon"
+import { images } from "@/lib/images"
+import { servicesPath } from "@/lib/site"
+
+// Pontos em % da peça. Ficam perto do eixo central do núcleo para continuar
+// sobre o objeto quando o recorte muda (quadrado no tablet, alto no desktop);
+// os rótulos ocupam as faixas vazias acima e abaixo dele.
+const callouts: Callout[] = [
+  {
+    label: "Produtos digitais",
+    href: `${servicesPath}#produtos`,
+    point: { x: 50, y: 25 },
+    at: { x: 46, y: 8 },
+    side: "left",
+  },
+  {
+    label: "Sistemas e APIs",
+    href: `${servicesPath}#sistemas`,
+    point: { x: 66, y: 47 },
+    at: { x: 56, y: 15 },
+    side: "right",
+  },
+  {
+    label: "Modernização de legado",
+    href: `${servicesPath}#modernizacao`,
+    point: { x: 36, y: 58 },
+    at: { x: 52, y: 84 },
+    side: "left",
+  },
+  {
+    label: "IA aplicada",
+    href: `${servicesPath}#ia`,
+    point: { x: 50, y: 73 },
+    at: { x: 56, y: 92 },
+    side: "right",
+  },
+]
 
 export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden"
+      className="bg-grad-ice relative isolate overflow-hidden py-2"
     >
-      <div aria-hidden="true" className="absolute inset-0 -z-10">
-        <div className="hero-grid absolute inset-0" />
-        <div className="absolute top-[40%] -left-[20%] h-24 w-[140%] origin-center animate-beam sm:h-32">
-          <div className="hero-beam absolute inset-0" />
-          <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
-        </div>
-      </div>
+      <Image
+        src={images.blueprintLight.src}
+        alt=""
+        fill
+        sizes="100vw"
+        className="-z-10 object-cover opacity-40"
+      />
 
-      <div className="container-site grid items-center gap-12 pt-14 pb-20 sm:pt-20 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-28">
-        <div className="lg:col-span-7">
-          <p className="font-ui text-base font-medium text-navy">
-            Boutique de software sob medida
-          </p>
-          <h1
-            id="hero-title"
-            className="heading-display mt-5 text-[clamp(2.1rem,1.2rem+3.8vw,4.1rem)] leading-[1.08]"
-          >
-            Software feito por quem responde por cada linha
-            <span
-              aria-hidden="true"
-              className="ml-[0.12em] inline-block h-[0.12em] w-[0.6em] animate-cursor bg-gold align-baseline"
-            />
-          </h1>
-          <p className="mt-6 max-w-[38rem] text-lg text-steel sm:text-xl">
-            Somos um time pequeno e sênior que projeta, constrói e mantém
-            sistemas web, APIs e produtos digitais para empresas que querem um
-            parceiro técnico, não uma fábrica de software.
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href={contactHref} className={buttonVariants({ size: "lg" })}>
-              Agendar uma conversa
-            </a>
-            <Link
-              href={servicesPath}
-              className={buttonVariants({ variant: "outline", size: "lg" })}
+      {/* Prancha 2×2: título, núcleo com callouts e duas peças curtas. */}
+      <div className="container-site">
+        <div className="board lg:min-h-[max(600px,calc(100svh-120px))] lg:grid-rows-[minmax(0,1fr)_auto]">
+          <Tile className="@container col-span-2 flex flex-col gap-10 md:col-span-12 lg:col-span-7">
+            <h1
+              id="hero-title"
+              // Tamanho pela largura da peça: o título fica em 2 linhas do
+              // tablet ao desktop largo.
+              className="heading-display text-[clamp(1.9rem,7.2cqi,4.5rem)] leading-[1.08] tracking-[-0.02em]"
             >
-              Ver serviços
-            </Link>
-          </div>
-        </div>
+              Software sob medida, feito de perto
+              <span
+                aria-hidden="true"
+                className="ml-[0.12em] inline-block h-[0.12em] w-[0.6em] animate-cursor bg-gold align-baseline"
+              />
+            </h1>
+            <p className="-mt-4 max-w-[38rem] text-lg text-steel sm:text-xl">
+              Somos um time pequeno e sênior que projeta, constrói e mantém
+              sistemas web, APIs e produtos digitais para empresas que querem um
+              parceiro técnico, não uma fábrica de software.
+            </p>
+            <div className="mt-auto">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <ContactTrigger className={buttonVariants({ size: "lg" })}>
+                  Agendar diagnóstico
+                </ContactTrigger>
+                <Link
+                  href={servicesPath}
+                  className={buttonVariants({ variant: "outline", size: "lg" })}
+                >
+                  Ver serviços
+                </Link>
+              </div>
+            </div>
+          </Tile>
 
-        <div className="relative sm:max-w-xl lg:col-span-5 lg:max-w-none">
-          <div
-            aria-hidden="true"
-            className="hud-corners absolute -inset-3 sm:-inset-4"
+          <SpecCallouts
+            image={images.heroCore.src}
+            alt={images.heroCore.alt}
+            callouts={callouts}
+            preload
+            sizes="(min-width: 1024px) 40vw, (min-width: 768px) 66vw, 100vw"
+            className="col-span-2 md:col-span-8 md:h-[30rem] lg:col-span-5 lg:row-span-2 lg:h-auto"
           />
-          <div className="relative overflow-hidden rounded-md bg-navy shadow-[0_30px_60px_-30px_rgb(0_41_107/0.55)]">
-            <Image
-              src={banner}
-              alt="Logotipo da Syscode42 em branco e dourado sobre fundo azul-marinho com brilho radial"
-              priority
-              placeholder="blur"
-              // O recorte 4:5 exibe só o centro da imagem 16:9: pede uma
-              // largura maior que a da caixa para não ampliar o banner.
-              sizes="(min-width: 1024px) 1100px, 100vw"
-              // Os recortes escondem a marca d'água no canto inferior direito
-              // do arquivo original.
-              className="aspect-[4/3] w-full object-cover object-[60%_50%] lg:aspect-[4/5] lg:object-[77%_50%]"
-            />
+
+          <div className="col-span-2 grid grid-cols-2 gap-[inherit] md:col-span-4 md:grid-cols-1 lg:col-span-7 lg:grid-cols-12">
+            <Tile
+              variant="beam"
+              className="flex min-h-40 flex-col lg:col-span-7 lg:min-h-48"
+            >
+              <p className="font-ui text-xl leading-snug font-medium text-balance sm:text-2xl">
+                Do diagnóstico à entrega, as mesmas pessoas.
+              </p>
+            </Tile>
+
+            <ContactTrigger className="tile bg-grad-gold group flex min-h-40 flex-col justify-between gap-6 text-ink transition-[filter] duration-200 hover:brightness-105 active:brightness-95 lg:col-span-5 lg:min-h-48">
+              <span>
+                <span className="block font-ui text-xl leading-tight font-semibold sm:text-2xl">
+                  Diagnóstico sem custo
+                </span>
+                <span className="mt-2 block text-base text-ink/80">
+                  Uma conversa para entender o problema e o que já existe.
+                </span>
+              </span>
+              <Icon
+                name="arrow-right"
+                className="size-7 transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </ContactTrigger>
           </div>
         </div>
       </div>

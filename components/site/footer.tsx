@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { BlockWordmark } from "@/components/site/block-wordmark"
 import { ConsentPreferencesButton } from "@/components/site/consent"
 import { Icon } from "@/components/ui/icon"
 import { contactHref, nav, privacyPath, site } from "@/lib/site"
@@ -11,6 +12,9 @@ export function Footer() {
 
   return (
     <footer className="bg-ink text-white/75">
+      <div className="container-site pt-16 sm:pt-20">
+        <BlockWordmark />
+      </div>
       <div className="container-site grid gap-12 py-16 sm:py-20 md:grid-cols-12">
         <div className="md:col-span-5">
           <Image
