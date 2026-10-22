@@ -5,7 +5,7 @@ export const site = {
   url: "https://www.syscode42.com.br",
   email: "contato@syscode42.com.br",
   locale: "pt_BR",
-  title: "Syscode42 — Boutique de software sob medida",
+  title: "Soluções de software sob medida | Syscode42",
   description:
     "Boutique de software enxuta: um time sênior e pequeno que projeta, desenvolve e mantém sistemas web, APIs e produtos digitais sob medida para a sua empresa.",
   keywords: [

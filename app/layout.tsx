@@ -1,7 +1,9 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next"
 import { Orbitron, Outfit, TikTok_Sans } from "next/font/google"
 
 import "./globals.css"
+import { Consent } from "@/components/site/consent"
 import { Footer } from "@/components/site/footer"
 import { Header } from "@/components/site/header"
 import { JsonLd } from "@/lib/json-ld"
@@ -142,6 +144,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Consent />
+        {/* Sem cookies nem dados pessoais: dispensa consentimento. */}
+        <Analytics />
       </body>
     </html>
   )

@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { ConsentPreferencesButton } from "@/components/site/consent"
 import { Icon } from "@/components/ui/icon"
 import { contactHref, nav, site } from "@/lib/site"
 import logoBlack from "@/public/logo-syscode42-black.webp"
@@ -65,10 +66,13 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-site flex flex-col gap-2 py-6 text-sm text-white/60 sm:flex-row sm:justify-between">
-          <p>
-            © {year} {site.legalName}. Todos os direitos reservados.
-          </p>
+        <div className="container-site flex flex-col gap-2 py-4 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6">
+            <p className="py-2">
+              © {year} {site.legalName}. Todos os direitos reservados.
+            </p>
+            <ConsentPreferencesButton />
+          </div>
           <p>Feito sob medida, como tudo que entregamos.</p>
         </div>
       </div>
