@@ -1,9 +1,9 @@
 "use client"
 
-import { Menu, X } from "lucide-react"
 import * as React from "react"
 
 import { buttonVariants } from "@/components/ui/button"
+import { Icon } from "@/components/ui/icon"
 import { contactHref, nav } from "@/lib/site"
 
 export function MobileNav() {
@@ -40,11 +40,7 @@ export function MobileNav() {
         onClick={() => setOpen((value) => !value)}
         className="inline-flex size-11 items-center justify-center rounded-sm text-ink hover:bg-navy/5"
       >
-        {open ? (
-          <X aria-hidden="true" className="size-6" />
-        ) : (
-          <Menu aria-hidden="true" className="size-6" />
-        )}
+        {open ? <Icon name="close-square" /> : <Icon name="category" />}
       </button>
 
       <nav

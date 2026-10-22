@@ -1,4 +1,5 @@
 import { buttonVariants } from "@/components/ui/button"
+import { Icon } from "@/components/ui/icon"
 import { contactHref, site } from "@/lib/site"
 
 export function Contact() {
@@ -27,6 +28,7 @@ export function Contact() {
             </p>
             <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
               <a href={contactHref} className={buttonVariants({ size: "lg" })}>
+                <Icon name="send" className="size-5" />
                 Agendar uma conversa
               </a>
               <a
@@ -36,6 +38,7 @@ export function Contact() {
                   className: "self-start text-lg sm:self-auto",
                 })}
               >
+                <Icon name="message" className="size-5" />
                 {site.email}
               </a>
             </div>

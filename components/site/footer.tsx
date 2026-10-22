@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { Icon } from "@/components/ui/icon"
 import { contactHref, nav, site } from "@/lib/site"
 import logoBlack from "@/public/logo-syscode42-black.webp"
 
@@ -45,8 +46,9 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${site.email}`}
-                className="inline-flex min-h-11 items-center break-all text-white underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
+                className="inline-flex min-h-11 items-center gap-2 break-all text-white underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
               >
+                <Icon name="message" className="size-5 text-gold" />
                 {site.email}
               </a>
             </li>

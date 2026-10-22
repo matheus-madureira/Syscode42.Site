@@ -1,5 +1,4 @@
-import { Plus } from "lucide-react"
-
+import { Icon } from "@/components/ui/icon"
 import { faq } from "@/lib/content"
 
 export function Faq() {
@@ -28,9 +27,9 @@ export function Faq() {
             <details key={item.question} className="group">
               <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-6 py-6 font-heading text-lg font-medium text-ink marker:content-none sm:text-xl [&::-webkit-details-marker]:hidden">
                 {item.question}
-                <Plus
-                  aria-hidden="true"
-                  className="mt-1 size-5 shrink-0 text-navy transition-transform duration-200 group-open:rotate-45"
+                <Icon
+                  name="arrow-down-2"
+                  className="mt-1 text-navy transition-transform duration-200 group-open:rotate-180"
                 />
               </summary>
               <p className="max-w-[62ch] pb-6 text-steel">{item.answer}</p>
