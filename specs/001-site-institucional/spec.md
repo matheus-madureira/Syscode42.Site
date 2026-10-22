@@ -33,7 +33,7 @@ Fazer o visitante entender em poucos segundos o que a Syscode42 faz e por que um
 
 ## Requisitos funcionais
 
-- RF1 — Página única (`/`) com âncoras: `#servicos`, `#boutique`, `#processo`, `#faq`, `#contato`.
+- RF1 — Página única (`/`) com âncoras: `#servicos`, `#sobre`, `#processo`, `#faq`, `#contato`.
 - RF2 — Cabeçalho fixo com logo, navegação por âncoras e CTA; menu recolhível abaixo de 768 px.
 - RF3 — Rodapé em `#000814` com o logo preto, links, e-mail e copyright.
 - RF4 — Metadados completos, JSON-LD (`Organization`, `ProfessionalService`, `WebSite`, `FAQPage`), sitemap, robots, manifest, ícones e imagem OG.

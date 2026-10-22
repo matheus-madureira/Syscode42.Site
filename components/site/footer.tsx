@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 import { contactHref, nav, site } from "@/lib/site"
-import logoBlack from "@/public/logo-syscode42-black.png"
+import logoBlack from "@/public/logo-syscode42-black.webp"
 
 export function Footer() {
   const year = new Date().getFullYear()

@@ -96,3 +96,10 @@ lib/
 ## Verificação
 
 `bun run typecheck`, `bun run lint`, `bun run build`; inspeção visual em 375, 768 e 1440 px com Playwright; checagem de headings, landmarks e foco via snapshot de acessibilidade.
+
+## Revisão 1 (2026-10-22)
+
+- Todas as imagens em WebP (`public/*.webp`); logos sem perda, banners com qualidade 88 (de ~1,4 MB para ~20 KB).
+- Favicon e apple-icon a partir do logo branco arredondado, declarados em `metadata.icons`, porque a convenção `app/icon.*` não aceita WebP.
+- A imagem OG converte o logo WebP para PNG em memória com `sharp` (dependência explícita; o renderizador do `next/og` não lê WebP).
+- Item de navegação "Por que boutique" renomeado para "Sobre nós" (âncora `#sobre`).

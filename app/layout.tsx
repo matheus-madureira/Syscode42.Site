@@ -66,6 +66,11 @@ export const metadata: Metadata = {
     },
   },
   formatDetection: { telephone: false },
+  // A convenção app/icon.* não aceita WebP; os ícones ficam em public/.
+  icons: {
+    icon: [{ url: "/favicon.webp", type: "image/webp", sizes: "48x48" }],
+    apple: [{ url: "/apple-icon.webp", type: "image/webp", sizes: "180x180" }],
+  },
 }
 
 export const viewport: Viewport = {
@@ -82,7 +87,7 @@ const organizationJsonLd = {
       name: site.name,
       legalName: site.legalName,
       url: site.url,
-      logo: `${site.url}/logo-syscode42-blue.png`,
+      logo: `${site.url}/logo-syscode-white.webp`,
       email: site.email,
     },
     {

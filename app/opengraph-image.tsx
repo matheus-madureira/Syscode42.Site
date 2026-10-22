@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { ImageResponse } from "next/og"
+import sharp from "sharp"
 
 export const alt = "Syscode42, boutique de software sob medida"
 export const size = { width: 1200, height: 630 }
@@ -8,9 +9,11 @@ export const contentType = "image/png"
 
 export default async function OpengraphImage() {
   const logo = await readFile(
-    join(process.cwd(), "public/logo-syscode-white.png")
+    join(process.cwd(), "public/logo-syscode-white.webp")
   )
-  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`
+  // O renderizador do next/og não lê WebP; converte só em memória.
+  const logoPng = await sharp(logo).png().toBuffer()
+  const logoSrc = `data:image/png;base64,${logoPng.toString("base64")}`
 
   return new ImageResponse(
     <div

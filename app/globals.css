@@ -132,7 +132,11 @@
       linear-gradient(to right, rgb(0 41 107 / 0.07) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(0 41 107 / 0.07) 1px, transparent 1px);
     background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(
+      ellipse 80% 70% at 30% 40%,
+      #000 30%,
+      transparent 80%
+    );
   }
 
   /* Feixe de luz do banner preto, reinterpretado sobre fundo claro. */

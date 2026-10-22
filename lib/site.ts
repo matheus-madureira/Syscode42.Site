@@ -1,4 +1,4 @@
-// TODO: confirmar domínio e e-mail definitivos antes de publicar.
+// TODO: confirmar se o domínio canônico é com ou sem "www" antes de publicar.
 export const site = {
   name: "Syscode42",
   legalName: "Syscode42",
@@ -23,7 +23,7 @@ export const site = {
 
 export const nav = [
   { href: "#servicos", label: "Serviços" },
-  { href: "#boutique", label: "Por que boutique" },
+  { href: "#sobre", label: "Sobre nós" },
   { href: "#processo", label: "Processo" },
   { href: "#faq", label: "Perguntas" },
 ] as const

@@ -3,8 +3,8 @@ import { principles } from "@/lib/content"
 export function Boutique() {
   return (
     <section
-      id="boutique"
-      aria-labelledby="boutique-title"
+      id="sobre"
+      aria-labelledby="sobre-title"
       className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"
     >
       <div
@@ -14,7 +14,7 @@ export function Boutique() {
       <div className="container-site grid gap-14 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
           <h2
-            id="boutique-title"
+            id="sobre-title"
             className="font-display text-[clamp(1.75rem,1.2rem+2.2vw,2.75rem)] leading-tight font-semibold text-balance"
           >
             Pequenos de propósito

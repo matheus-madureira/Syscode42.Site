@@ -2,7 +2,7 @@ import Image from "next/image"
 
 import { buttonVariants } from "@/components/ui/button"
 import { contactHref } from "@/lib/site"
-import banner from "@/public/wallpaper-syscode42-blue.png"
+import banner from "@/public/wallpaper-syscode42-blue.webp"
 
 export function Hero() {
   return (
