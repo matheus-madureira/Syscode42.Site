@@ -126,6 +126,31 @@
     @apply font-display font-semibold tracking-[-0.01em] text-balance text-ink;
   }
 
+  /* Texto corrido de páginas institucionais (política de privacidade). */
+  .policy-body > * + * {
+    @apply mt-4;
+  }
+  .policy-body > h2 + * {
+    @apply mt-5;
+  }
+  .policy-body p,
+  .policy-body li {
+    @apply text-steel;
+  }
+  .policy-body ul {
+    @apply space-y-2 pl-5;
+    list-style: square;
+  }
+  .policy-body li::marker {
+    @apply text-gold;
+  }
+  .policy-body strong {
+    @apply font-semibold text-ink;
+  }
+  .policy-body code {
+    @apply rounded-sm bg-white px-1.5 py-0.5 text-[0.9em] text-navy;
+  }
+
   /* Grade técnica do hero: linhas finas que somem nas bordas. */
   .hero-grid {
     background-image:

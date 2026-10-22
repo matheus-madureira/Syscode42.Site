@@ -21,12 +21,12 @@ export function Header() {
           <ul className="flex items-center gap-1 font-ui text-[0.95rem] text-steel">
             {nav.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className="inline-flex min-h-11 items-center rounded-sm px-3 transition-colors hover:text-navy"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import * as React from "react"
 
 import { buttonVariants } from "@/components/ui/button"
@@ -52,13 +53,13 @@ export function MobileNav() {
         <ul className="container-site flex flex-col py-3 font-ui text-lg">
           {nav.map((item) => (
             <li key={item.href}>
-              <a
+              <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="flex min-h-12 items-center border-b border-navy/10 text-ink"
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="pt-4 pb-2">

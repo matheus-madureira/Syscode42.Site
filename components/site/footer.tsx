@@ -1,8 +1,9 @@
 import Image from "next/image"
+import Link from "next/link"
 
 import { ConsentPreferencesButton } from "@/components/site/consent"
 import { Icon } from "@/components/ui/icon"
-import { contactHref, nav, site } from "@/lib/site"
+import { contactHref, nav, privacyPath, site } from "@/lib/site"
 import logoBlack from "@/public/logo-syscode42-black.webp"
 
 export function Footer() {
@@ -30,12 +31,12 @@ export function Footer() {
           <ul className="mt-4 space-y-1">
             {nav.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className="inline-flex min-h-11 items-center hover:text-white"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -71,6 +72,12 @@ export function Footer() {
             <p className="py-2">
               © {year} {site.legalName}. Todos os direitos reservados.
             </p>
+            <Link
+              href={privacyPath}
+              className="inline-flex min-h-11 items-center underline-offset-4 hover:text-white hover:underline"
+            >
+              Política de privacidade
+            </Link>
             <ConsentPreferencesButton />
           </div>
           <p>Feito sob medida, como tudo que entregamos.</p>

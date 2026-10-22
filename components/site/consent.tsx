@@ -1,10 +1,12 @@
 "use client"
 
 import { GoogleAnalytics } from "@next/third-parties/google"
+import Link from "next/link"
 import Script from "next/script"
 import * as React from "react"
 
 import { buttonVariants } from "@/components/ui/button"
+import { privacyPath } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 type Choice = "granted" | "denied" | "unset"
@@ -90,7 +92,13 @@ function ConsentBanner() {
         </h2>
         <p className="mt-2 text-base text-steel">
           Usamos o Google Analytics e o Microsoft Clarity para entender como o
-          site é usado e melhorá-lo. Eles só são ativados se você aceitar.
+          site é usado e melhorá-lo. Eles só são ativados se você aceitar.{" "}
+          <Link
+            href={privacyPath}
+            className="text-navy underline decoration-sky decoration-2 underline-offset-4 hover:decoration-navy"
+          >
+            Ver política de privacidade
+          </Link>
         </p>
         <div className="mt-4 flex gap-3">
           <button

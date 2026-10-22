@@ -22,11 +22,13 @@ export const site = {
 } as const
 
 export const nav = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#sobre", label: "Sobre nós" },
-  { href: "#processo", label: "Processo" },
-  { href: "#faq", label: "Perguntas" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#sobre", label: "Sobre nós" },
+  { href: "/#processo", label: "Processo" },
+  { href: "/#faq", label: "Perguntas" },
 ] as const
+
+export const privacyPath = "/politica-de-privacidade"
 
 export const contactHref = `mailto:${site.email}?subject=${encodeURIComponent(
   "Quero conversar sobre um projeto"
